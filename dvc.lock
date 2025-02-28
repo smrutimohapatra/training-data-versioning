@@ -5,8 +5,8 @@ stages:
     deps:
     - path: bm/BS_metadata.xlsx
       hash: md5
-      md5: 2946e1f77e9a0273f4203849b115a9c8
-      size: 10815
+      md5: b7b96b066bce2f52d5f24ff3ac964df8
+      size: 10771
     - path: sync_images.py
       hash: md5
       md5: 51ae1079759ac4fe89d01c9ffd8dfe1b
@@ -14,6 +14,6 @@ stages:
     outs:
     - path: data/bm/images
       hash: md5
-      md5: ce566b5429fad8ba58de8ca490ba106e.dir
-      size: 187888884
-      nfiles: 100
+      md5: 9bd1b255065d925beccc014f14e0b071.dir
+      size: 184406401
+      nfiles: 98
