@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  sync_images:
+    cmd: python sync_images.py
+    deps:
+    - path: bm/BS_metadata.xlsx
+      hash: md5
+      md5: 2946e1f77e9a0273f4203849b115a9c8
+      size: 10815
+    - path: sync_images.py
+      hash: md5
+      md5: 51ae1079759ac4fe89d01c9ffd8dfe1b
+      size: 1071
+    outs:
+    - path: data/bm/images
+      hash: md5
+      md5: ce566b5429fad8ba58de8ca490ba106e.dir
+      size: 187888884
+      nfiles: 100

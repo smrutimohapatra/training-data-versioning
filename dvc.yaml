@@ -1,0 +1,8 @@
+stages:
+  sync_images:
+    cmd: python sync_images.py
+    deps:
+    - bm/BS_metadata.xlsx
+    - sync_images.py
+    outs:
+    - data/bm/images
