@@ -1,5 +1,0 @@
-outs:
-- md5: 6287c31de201a7b9a387f160d82e47b1
-  size: 5095
-  hash: md5
-  path: sync_all_images.py
