@@ -1,0 +1,10 @@
+stages:
+  sync_images:
+    cmd: bash -c "python sync_all_images.py && aws s3 sync /media/dev_new/dev_new/retraining/destination/sample-dataset
+      s3://ff-ai-data/DVC-Sample-Dataset/ --exclude '*' --include '*.jpg' --include
+      '*.jpeg' --include '*.png' --include '*.bmp' --include '*.tif' --include '*.tiff'"
+    deps:
+    - config.yaml
+    - sync_all_images.py
+    - train-data/bm/metadata_training_bm_2.1.0.xlsx
+    - train-data/multi/metadata_training_multi_2.1.0.xlsx

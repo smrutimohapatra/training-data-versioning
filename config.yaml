@@ -1,0 +1,17 @@
+source_roots:
+  dermoscopic: /mnt/devnas/Kooperationen_Bilder_Diagnosen/HashedTrainData/dermoscopic
+  clinical: /mnt/devnas/Kooperationen_Bilder_Diagnosen/HashedTrainData/clinical
+
+target_roots: /media/dev_new/dev_new/retraining/destination/sample-dataset
+
+clinical_classes: [cm]
+
+label_columns:
+  bm: Folder
+  multi: Class
+  mnm: Folder
+  cm: Folder
+  # everything else uses 'Folder'
+
+metadata_dir: train-data
+log_file_dir: train-data/logs
