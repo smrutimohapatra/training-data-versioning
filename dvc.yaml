@@ -7,4 +7,5 @@ stages:
     - config.yaml
     - sync_all_images.py
     - train-data/bm/metadata_training_bm_2.1.0.xlsx
+    - train-data/cm/metadata_training_cm_with_hash_value_1.2.0.xlsx
     - train-data/multi/metadata_training_multi_2.1.0.xlsx
