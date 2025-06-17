@@ -1,2 +1,6 @@
 train-data/logs/*
 *.log
+
+# DVC Cache and Temporary Files
+/.dvc/cache
+/.dvc/tmp

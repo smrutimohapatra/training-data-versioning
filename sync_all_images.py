@@ -25,7 +25,7 @@ LABEL_COLUMN_BY_CLASS = {
     "bm": "Folder",
     "multi": "Class",
     "mnm": "Folder",
-    # "cm": "Folder"
+    "cm": "Folder"
     # Default is 'Folder'
 }
 
@@ -103,7 +103,7 @@ def find_latest_metadata_file(class_dir):
     """
     metadata_versions = []
     for fname in os.listdir(class_dir):
-        match = re.match(r"metadata_training_(\w+)_([\d\.]+)\.xlsx", fname)
+        match = re.match(r"metadata_training_(\w+)_([\d\.]+)\.xlsx", fname) or re.match(r"metadata_training_(\w+)_with_hash_value_([\d\.]+)\.xlsx", fname)
         if match:
             class_name = match.group(1)
             version_str = match.group(2)
