@@ -1,4 +1,5 @@
 source_roots:
+  base: /mnt/devnas/Kooperationen_Bilder_Diagnosen/HashedTrainData
   dermoscopic: /mnt/devnas/Kooperationen_Bilder_Diagnosen/HashedTrainData/dermoscopic
   clinical: /mnt/devnas/Kooperationen_Bilder_Diagnosen/HashedTrainData/clinical
 

@@ -13,6 +13,7 @@ with open("config.yaml", "r") as f:
 # Dynamic access from config
 DERMOSCOPIC_BASE = CONFIG["source_roots"]["dermoscopic"]
 CLINICAL_BASE = CONFIG["source_roots"]["clinical"]
+MAIN_BASE = CONFIG["source_roots"]["base"]
 TARGET_FOLDER = CONFIG["target_roots"]
 CLINICAL_CLASSES = set(CONFIG["clinical_classes"])
 LABEL_COLUMN_BY_CLASS = CONFIG.get("label_columns", {})
@@ -34,7 +35,7 @@ def get_label_column(class_name):
 
 def get_source_base(class_name):
     clinical_classes = {"cm"}
-    return CLINICAL_BASE if class_name in clinical_classes else DERMOSCOPIC_BASE
+    return MAIN_BASE if class_name in clinical_classes else DERMOSCOPIC_BASE
 
 def get_target_base():
     return TARGET_FOLDER
@@ -51,8 +52,11 @@ def sync_images_from_sheet(class_name, sheet ,df, label_column, source_base, tar
             continue
 
         source_path = os.path.join(source_base, hash_val)
+        if class_name in {"cm"}:
+            source_path = os.path.join(CLINICAL_BASE,hash_val) if folder in {"clinic"} else os.path.join(DERMOSCOPIC_BASE,hash_val)
+        else:
+            source_path = os.path.join(source_base, hash_val)
         target_path = os.path.join(target_destination, class_name, sheet ,"photos", folder, hash_val)
-
         if not os.path.exists(target_path):
             if os.path.exists(source_path):
                 os.makedirs(os.path.dirname(target_path), exist_ok=True)
